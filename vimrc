@@ -78,12 +78,13 @@ set vb t_vb=
 set number
 set nowrap
 
-map <C-Left> :tabprevious<CR>
-map <C-Right> :tabnext<CR>
-map <silent> <C-A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-map <silent> <C-A-Right> :execute 'silent! tabmove ' . tabpagenr()<>
-map <silent> <C-N> :FufCoverageFile<CR>
+map <silent> <C-A-Left> :tabprevious<CR>
+map <silent> <C-A-Right> :tabnext<CR>
+map <silent> <C-A-S-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+map <silent> <C-A-S-Right> :execute 'silent! tabmove ' . tabpagenr()<>
+map <silent> <S-n> :FufCoverageFile<CR>
 map <silent> <C-f> :NERDTreeToggle<CR>
+map <silent> <C-n> :tabe<CR>
 
 set nocompatible               " be iMproved
 filetype off                   " required!
