@@ -65,4 +65,4 @@ Another required package.
 Allows you to find files/folders and open them just typing a part of its name.
 
 ## Thanks
-Well, I would like to thank to @eurodev and all Crononauta team for discovering me this wonderfull editor. Special thanks to @nacmartin, your plugins recommendations help me soooo much.
+Well, I would like to thank to [eurodev](https://github.com/eurodev) and all [Crononauta](https://github.com/crononauta) team for discovering me this wonderfull editor. Special thanks to [nacmartin](https://github.com/nacmartin), your plugins recommendations help me soooo much.
