@@ -22,7 +22,7 @@ vim +BundleInstall +qall!
 
 
 ## Description
-Used bundles.
+Here are allo bundles I have installed and a short description. All of them have a lot of functions that are not discribed here.
 
 ### Bundle 'ervandew/supertab'
 Allows you to autocomplete function names using tab key.
@@ -64,3 +64,5 @@ Another required package.
 ### Bundle 'FuzzyFinder'
 Allows you to find files/folders and open them just typing a part of its name.
 
+## Thanks
+Well, I would like to thank to @eurodev and all Crononauta team for discovering me this wonderfull editor. Special thanks to @nacmartin, your plugins recommendations help me soooo much.
