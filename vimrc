@@ -138,9 +138,8 @@ Bundle 'gmarik/vundle'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
 Bundle 'sumpygump/php-documentor-vim'
-" Bundle 'joestelmach/lint.vim'
+Bundle 'joestelmach/lint.vim'
 Bundle 'garbas/vim-snipmate'
-" Bundle 'hut/ranger'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle "tomtom/tlib_vim"
 Bundle "honza/snipmate-snippets"
