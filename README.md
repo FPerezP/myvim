@@ -1,7 +1,8 @@
 # My Vim Config
 
 ## Drupal Branch
-This is a Drupal specific branch
+**Beta Version**
+This is a Drupal specific branch. 
 
 ## Introduction
 This repo is created to develop in PHP. You are free to add your own Vim config, I would be glad to add your config as a new branch.
