@@ -1,5 +1,8 @@
 # My Vim Config
 
+## Symfony Branch
+This is a specific branch for Symfony
+
 ## Introduction
 This repo is created to develop in PHP. You are free to add your own Vim config, I would be glad to add your config as a new branch.
 I recommend to read vimrc file and erese everything you dont understand. There are a few comments inside it to help you understand everything.
@@ -42,7 +45,6 @@ Allows you to create code snippets.
 ### Bundle 'MarcWeber/vim-addon-mw-utils'
 Just a few utils like caching  content or tiny blob windows that is used by other vim plugins included in this repo. Just a required plugin.
 
-
 ### Bundle "tomtom/tlib_vim"
 Another required package.
 
@@ -63,6 +65,9 @@ Another required package.
 
 ### Bundle 'FuzzyFinder'
 Allows you to find files/folders and open them just typing a part of its name.
+
+### Bundle 'docteurklein/vim-symfony'
+Gets you a few specific functions for Symfony developers
 
 ## Thanks
 Well, I would like to thank to [eurodev](https://github.com/eurodev) and all [Crononauta](https://github.com/crononauta) team for discovering me this wonderfull editor. Special thanks to [nacmartin](https://github.com/nacmartin), your plugins recommendations help me soooo much.
