@@ -122,6 +122,8 @@ map <silent> <C-A-S-Right> :execute 'silent! tabmove ' . tabpagenr()<>
 map <silent> <S-n> :FufCoverageFile<CR>
 map <silent> <C-f> :NERDTreeToggle<CR>
 map <silent> <C-n> :tabe<CR>
+map <S-f> :execute ":!"g:symfony_enable_shell_cmd<CR>
+
 
 set nocompatible               " be iMproved
 filetype off                   " required!
@@ -138,15 +140,15 @@ Bundle 'gmarik/vundle'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
 Bundle 'sumpygump/php-documentor-vim'
-" Bundle 'joestelmach/lint.vim'
+Bundle 'joestelmach/lint.vim'
 Bundle 'garbas/vim-snipmate'
-" Bundle 'hut/ranger'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle "tomtom/tlib_vim"
 Bundle "honza/snipmate-snippets"
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'docteurklein/vim-symfony'
 
 " vim-scripts repos
 Bundle 'L9'
@@ -198,6 +200,24 @@ if has("statusline") && !&cp
   " set statusline+=Buf:#%n
   " set statusline+=[%b][0x%B]
 endif
+
+" jump to a twig view in symfony
+function! s:SfJumpToView()
+  mark C
+  normal! ]M
+  let end = line(".")
+  normal! [m
+  try
+    call search('\v[^.:]+\.html\.twig', '', end)
+    normal! gf
+  catch
+    normal! g`C
+    echohl WarningMsg | echomsg "Template file not found" | echohl None
+  endtry
+endfunction
+com! SfJumpToView call s:SfJumpToView()
+" create a mapping only in a Controller file 
+autocmd BufEnter *Controller.php nmap <buffer><leader>v :SfJumpToView<CR>
 
 " Key maps for phpDocumentor
 au BufRead,BufNewFile *.php inoremap <buffer> <C-P> :call PhpDoc()<CR>
