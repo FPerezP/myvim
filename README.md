@@ -1,5 +1,8 @@
 # My Vim Config
 
+## Drupal Branch
+This is a Drupal specific branch
+
 ## Introduction
 This repo is created to develop in PHP. You are free to add your own Vim config, I would be glad to add your config as a new branch.
 I recommend to read vimrc file and erese everything you dont understand. There are a few comments inside it to help you understand everything.
@@ -63,6 +66,9 @@ Another required package.
 
 ### Bundle 'FuzzyFinder'
 Allows you to find files/folders and open them just typing a part of its name.
+
+## Bundle 'benjifisher/Vim-Plugin-for-Drupal'
+Gets a few specific functions for Drupal developers
 
 ## Thanks
 Well, I would like to thank to [eurodev](https://github.com/eurodev) and all [Crononauta](https://github.com/crononauta) team for discovering me this wonderfull editor. Special thanks to [nacmartin](https://github.com/nacmartin), your plugins recommendations help me soooo much.
