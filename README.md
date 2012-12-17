@@ -1,6 +1,7 @@
 # My Vim Config
 
 ## Symfony Branch
+**Beta Version**
 This is a specific branch for Symfony
 
 ## Introduction
