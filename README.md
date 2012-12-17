@@ -23,6 +23,16 @@ mkdir ~/.vim/_backup
 vim +BundleInstall +qall!
 ```
 
+### Change Branch
+```git
+git checkout <branch>
+rm ~/.vimrc
+cp ~/.vim/vimrc ~/.vimrc
+vim +BundleInstall +qall!
+```
+
+#### TODO
+It´s planned to add a bash script to change branches.
 
 ## Description
 Here are allo bundles I have installed and a short description. All of them have a lot of functions that are not discribed here.
