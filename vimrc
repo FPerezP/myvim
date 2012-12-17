@@ -14,9 +14,46 @@ set list
 set encoding=utf-8
 set shiftwidth=2
 
+" Set leader to comma.
+let mapleader = ","
+let maplocalleader = ","
+
+" Don't redraw screen while executing macros.
+set nolazyredraw
+
+" Flexible backspace: allow backspacing over autoindent, line breaks, start of insert.
+set backspace=indent,eol,start
+
+" Set title of window according to filename.
+set title
+
+" Use space and backspace for quick navigation forward/back.
+noremap <Space> <PageDown>
+noremap <BS> <PageUp>
+
+" When editing a file, always jump to the last known cursor position. Don't
+" " do it when the position is invalid or when inside an event handler
+" (happens
+" " when dropping a file on gvim).
+autocmd BufReadPost *
+\ if line("'\"") > 0 && line("'\"") <= line("$") |
+\   exe "normal g`\"" |
+\ endif
+
+" first set path
+set path+=**
+
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files we are not likely to want to edit or read.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+
+if &term =~ '^screen'
+" tmux will send xterm-style keys when its xterm-keys option is on
+  execute "set <xUp>=\e[1;*A"
+  execute "set <xDown>=\e[1;*B"
+  execute "set <xRight>=\e[1;*C"
+  execute "set <xLeft>=\e[1;*D"
+endif
 
 " We know xterm-debian is a color terminal
 if &term =~ "xterm-debian" || &term =~ "xterm-xfree86"
@@ -101,8 +138,9 @@ Bundle 'gmarik/vundle'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
 Bundle 'sumpygump/php-documentor-vim'
-Bundle 'joestelmach/lint.vim'
+" Bundle 'joestelmach/lint.vim'
 Bundle 'garbas/vim-snipmate'
+" Bundle 'hut/ranger'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle "tomtom/tlib_vim"
 Bundle "honza/snipmate-snippets"
@@ -114,7 +152,20 @@ Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 
+" Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+" non github repos
+" Bundle 'git://git.wincent.com/command-t.git'
+
 filetype plugin indent on     " required!
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
 
 "NERDTree open for all tabs
 let g:nerdtree_tabs_open_on_console_startup=1
@@ -128,6 +179,10 @@ set smartcase                     " ... unless they contain at least one capital
 set backupdir=~/.vim/_backup    " where to put backup files.
 set directory=~/.vim/_temp      " where to put swap files.
 
+" Create _folders if dont exist
+silent !mkdir ~/.vim/_backup > /dev/null 2>&1
+silent !mkdir ~/.vim/_temp > /dev/null 2>&1
+
 if has("statusline") && !&cp
   set laststatus=2  " always show the status bar
 
@@ -140,6 +195,8 @@ if has("statusline") && !&cp
   " Finish the statusline
   set statusline+=Line:%l/%L[%p%%]
   set statusline+=Col:%v
+  " set statusline+=Buf:#%n
+  " set statusline+=[%b][0x%B]
 endif
 
 " Key maps for phpDocumentor
@@ -147,7 +204,6 @@ au BufRead,BufNewFile *.php inoremap <buffer> <C-P> :call PhpDoc()<CR>
 au BufRead,BufNewFile *.php nnoremap <buffer> <C-P> :call PhpDoc()<CR>
 au BufRead,BufNewFile *.php vnoremap <buffer> <C-P> :call PhpDocRange()<CR>
 
-" My personal info to add to phpDoc
 let g:pdv_cfg_Package = 'Crononauta'
 let g:pdv_cfg_Author = 'Francisco Pérez <francisco.perez@crononauta.com>'
 let g:pdv_cfg_ClassTags = ["package","author","version"]
