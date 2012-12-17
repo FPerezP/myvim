@@ -1,5 +1,8 @@
 # My Vim Config
 
+## Base branch
+This is the base branch for PHP developers
+
 ## Introduction
 This repo is created to develop in PHP. You are free to add your own Vim config, I would be glad to add your config as a new branch.
 I recommend to read vimrc file and erese everything you dont understand. There are a few comments inside it to help you understand everything.
