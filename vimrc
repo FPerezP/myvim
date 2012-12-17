@@ -146,6 +146,7 @@ Bundle "honza/snipmate-snippets"
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'benjifisher/Vim-Plugin-for-Drupal'
 
 " vim-scripts repos
 Bundle 'L9'
