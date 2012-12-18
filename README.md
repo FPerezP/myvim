@@ -26,7 +26,7 @@ vim +BundleInstall +qall!
 ### Change Branch
 ```git
 git checkout <branch>
-vim +BundleInstall +qall!
+vim +BundleClean +BundleInstall +qall!
 ```
 
 #### TODO
