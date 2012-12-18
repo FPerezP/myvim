@@ -18,7 +18,7 @@ This Vim config is based on [Vunde](https://github.com/gmarik/vundle).
 ```git
 git clone git@github.com:FPerezP/myvim.git ~/.vim
 git clone git@github.com:gmarik/vundle.git ~/.vim/bundle/vundle
-cp ~/.vim/vimrc ~/.vimrc
+ln -s ~/.vim/vimrc ~/.vimrc
 mkdir ~/.vim/_temp
 mkdir ~/.vim/_backup
 vim +BundleInstall +qall!
@@ -27,9 +27,7 @@ vim +BundleInstall +qall!
 ### Change Branch
 ```git
 git checkout <branch>
-rm ~/.vimrc
-cp ~/.vim/vimrc ~/.vimrc
-vim +BundleInstall +qall!
+vim +BundleClean +BundleInstall +qall!
 ```
 
 #### TODO
