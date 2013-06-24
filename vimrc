@@ -146,6 +146,7 @@ Bundle "honza/snipmate-snippets"
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'nathanaelkane/vim-indent-guides'
 
 " vim-scripts repos
 Bundle 'L9'
@@ -206,3 +207,9 @@ au BufRead,BufNewFile *.php vnoremap <buffer> <C-P> :call PhpDocRange()<CR>
 let g:pdv_cfg_Package = 'Crononauta'
 let g:pdv_cfg_Author = 'Francisco Pérez <francisco.perez@crononauta.com>'
 let g:pdv_cfg_ClassTags = ["package","author","version"]
+
+let g:indent_guides_auto_colors = 1 
+let g:indent_guides_enable_on_vim_startup = 1 
+let g:indent_guides_start_level = 2 
+let g:indent_guides_guide_size = 1 
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
