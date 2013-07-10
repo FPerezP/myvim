@@ -1,5 +1,4 @@
 set nocompatible " Use Vim defaults instead of 100% vi compatibility
-set backspace=indent,eol,start " more powerful backspacing
 
 " Now we set some defaults for the editor 
 set autoindent " always set autoindenting on
@@ -29,10 +28,6 @@ set title
 
 " Break line at 80 chars
 "set tw=79
-
-" Use space and backspace for quick navigation forward/back.
-"noremap <Space> <PageDown>
-"noremap <BS> <PageUp>
 
 " When editing a file, always jump to the last known cursor position. Don't
 " " do it when the position is invalid or when inside an event handler
@@ -67,14 +62,6 @@ endif
 
 " Make p in Visual mode replace the selected text with the "" register.
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
-
-" Vim5 and later versions support syntax highlighting. Uncommenting the next
-" line enables syntax highlighting by default.
-" syntax on
-
-" If using a dark background within the editing area and syntax highlighting
-" turn on this option as well
-" set background=dark
 
 if has("autocmd")
  " Enabled file type detection
@@ -111,17 +98,13 @@ endtry
 syntax on
 set bg=dark
 
-nnoremap <C-L> :%s/\s*$//g<CR>
+nnoremap <C-L> :%s/\s\+$//<cr>:let @/=''<CR>:noh<CR>
 
 set vb t_vb=
 
 set number
 set nowrap
 
-map <silent> <C-A-Left> :tabprevious<CR>
-map <silent> <C-A-Right> :tabnext<CR>
-map <silent> <C-A-S-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-map <silent> <C-A-S-Right> :execute 'silent! tabmove ' . tabpagenr()<>
 map <silent> <S-n> :FufCoverageFile<CR>
 map <silent> <C-f> :NERDTreeToggle<CR>
 map <silent> <C-n> :tabe<CR>
@@ -150,6 +133,8 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'bling/vim-airline'
+Bundle 'Valloric/YouCompleteMe'
 
 " vim-scripts repos
 Bundle 'L9'
@@ -172,6 +157,11 @@ filetype plugin indent on     " required!
 
 "NERDTree open for all tabs
 let g:nerdtree_tabs_open_on_console_startup=1
+let NERDTreeIgnore = ['.vim$', '\~$', '.*\.pyc$', '.*.pid', '.*\.o$', '.*\.pyc\$class']
+let NERDChristmasTree = 1
+let NERDTreeDirArrows = 1
+let NERDTreeChDirMode = 2
+
 
 " Search
 set hlsearch                      " highlight matches
@@ -185,22 +175,6 @@ set smartcase                     " ... unless they contain at least one capital
 " Create _folders if dont exist
 " silent !mkdir ~/.vim/_backup > /dev/null 2>&1
 " silent !mkdir ~/.vim/_temp > /dev/null 2>&1
-
-if has("statusline") && !&cp
-  set laststatus=2  " always show the status bar
-
-  " Start the status line
-  set statusline=%f\ %m\ %r
-
-  " Add fugitive
-  set statusline+=%{fugitive#statusline()}
-
-  " Finish the statusline
-  set statusline+=Line:%l/%L[%p%%]
-  set statusline+=Col:%v
-  " set statusline+=Buf:#%n
-  " set statusline+=[%b][0x%B]
-endif
 
 " Key maps for phpDocumentor
 au BufRead,BufNewFile *.php inoremap <buffer> <C-P> :call PhpDoc()<CR>
@@ -216,3 +190,16 @@ let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+
+" airlines preferences
+set t_Co=256
+set laststatus=2  " always show the status bar
+let g:airline_enable_syntastic=1
+let g:airline_powerline_fonts=1
+" unicode symbols
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+let g:airline_linecolumn_prefix = '␤ '
+let g:airline_fugitive_prefix = '⎇ '
+let g:airline_paste_symbol = 'ρ'
+let g:airline_readonly_symbol = '✗'
