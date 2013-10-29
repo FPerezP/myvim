@@ -27,7 +27,7 @@ set backspace=indent,eol,start
 set title
 
 " Break line at 80 chars
-"set tw=79
+set tw=99
 
 " When editing a file, always jump to the last known cursor position. Don't
 " " do it when the position is invalid or when inside an event handler
@@ -121,20 +121,20 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 " original repos on github
-"Bundle 'ervandew/supertab'
+Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
 Bundle 'sumpygump/php-documentor-vim'
 " Bundle 'joestelmach/lint.vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle "tomtom/tlib_vim"
-Bundle "honza/snipmate-snippets"
+"Bundle "honza/snipmate-snippets"
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'bling/vim-airline'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 
 " vim-scripts repos
 Bundle 'L9'
@@ -203,3 +203,4 @@ let g:airline_linecolumn_prefix = '␤ '
 let g:airline_fugitive_prefix = '⎇ '
 let g:airline_paste_symbol = 'ρ'
 let g:airline_readonly_symbol = '✗'
+
