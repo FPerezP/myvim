@@ -205,7 +205,7 @@ au BufRead,BufNewFile *.php nnoremap <buffer> <C-P> :call PhpDoc()<CR>
 au BufRead,BufNewFile *.php vnoremap <buffer> <C-P> :call PhpDocRange()<CR>
 
 let g:pdv_cfg_Package = 'Crononauta'
-let g:pdv_cfg_Author = 'Francisco Pérez <francisco.perez@crononauta.com>'
+let g:pdv_cfg_Author = 'Francisco Pérez <franperezparadas@gmail.com>'
 let g:pdv_cfg_ClassTags = ["package","author","version"]
 
 let g:indent_guides_auto_colors = 1 
